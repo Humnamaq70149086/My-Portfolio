@@ -319,6 +319,31 @@ p { margin: 0; }
 .seal.sim { border-radius: 9px; }
 .seal.sim::after { border-radius: 12px; }
 .cred:hover .seal::after { animation: spin 6s linear infinite; }
+.cred.has-cert { align-items: start; }
+.cred.has-cert .year { padding-top: 3px; }
+.cred-tasks { margin-top: 6px; font-size: .92rem; color: var(--muted); max-width: 30em; }
+.cred-open {
+  margin-top: 10px; font: 700 .9rem var(--body); color: var(--accent); background: none; border: 0; padding: 0 0 2px; cursor: pointer;
+  border-bottom: 2px solid currentColor; display: inline-flex; gap: 6px; align-items: center;
+}
+.cred-open::after { content: ""; width: 7px; height: 7px; border-top: 2px solid currentColor; border-right: 2px solid currentColor; transform: rotate(45deg); transition: transform .25s; }
+.cred-open:hover::after { transform: translateX(3px) rotate(45deg); }
+
+.cert-dialog {
+  width: min(920px, calc(100vw - 32px)); max-height: calc(100vh - 32px); padding: 18px; border: 1px solid var(--line); border-radius: 18px;
+  background: var(--surface); color: var(--ink); overflow: auto;
+}
+.cert-dialog::backdrop { background: rgba(10, 12, 30, .6); backdrop-filter: blur(4px); }
+.cert-dialog[open] { display: grid; gap: 14px; animation: dlgIn .45s cubic-bezier(.2,.9,.2,1); }
+.cert-dialog[open]::backdrop { animation: fade .3s ease-out; }
+@keyframes dlgIn { from { opacity: 0; transform: translateY(24px) scale(.94) rotate(-1deg); } to { opacity: 1; transform: none; } }
+@keyframes fade { from { opacity: 0; } }
+.cert-dialog-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.cert-dialog-head h3 { font-size: 1.2rem; }
+.cert-close { font: 700 .95rem var(--body); color: var(--ink); background: var(--paper); border: 1px solid var(--line); border-radius: 999px; padding: 8px 16px; cursor: pointer; }
+.cert-dialog img { width: 100%; height: auto; border-radius: 8px; border: 1px solid var(--line); }
+.cert-dialog .btn { justify-self: start; }
+
 .cred-note { margin-top: 14px; color: var(--muted); font-size: .9rem; }
 .cred-group.shown .cred { animation: credIn .6s cubic-bezier(.2,.8,.2,1) both; }
 .cred-group.shown .cred:nth-child(2) { animation-delay: .1s; } .cred-group.shown .cred:nth-child(3) { animation-delay: .2s; } .cred-group.shown .cred:nth-child(4) { animation-delay: .3s; }

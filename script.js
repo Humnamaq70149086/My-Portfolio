@@ -26,9 +26,8 @@
   /* ---------- typewriter for the role line ---------- */
   const typed = $("#typed");
   const phrases = [
-    "AI that cites its sources",
-    "retrieval systems for legal questions",
     "ML models for health screening",
+    "apps that put models to work",
     "secure, tested pipelines",
     "toward AI safety research",
   ];
@@ -171,7 +170,7 @@
   /* ---------- RAG trace animation ---------- */
   const term = $("#terminal");
   const tQuery = $("#tQuery");
-  const query = "Can a tenant be evicted without written notice?";
+  const query = "/predict/heart  {age: 54, chol: 241, bp: 132}";
   if (term && tQuery) {
     const steps = $$("[data-step]", term).sort((a, b) => a.dataset.step - b.dataset.step);
     if (reduceMotion) {
@@ -203,6 +202,26 @@
       }, { threshold: 0.3 });
       startIo.observe(term);
     }
+  }
+
+  /* ---------- certificate viewer ---------- */
+  const dlg = $("#certDialog");
+  if (dlg && typeof dlg.showModal === "function") {
+    const img = $("#certImg"), title = $("#certTitle"), pdf = $("#certPdf");
+    let opener = null;
+    $$(".cred-open").forEach((btn) => btn.addEventListener("click", () => {
+      opener = btn;
+      img.src = btn.dataset.img;
+      img.alt = "Certificate: " + btn.dataset.title;
+      title.textContent = btn.dataset.title;
+      pdf.href = btn.dataset.pdf;
+      dlg.showModal();
+    }));
+    $("#certClose").addEventListener("click", () => dlg.close());
+    dlg.addEventListener("click", (e) => { if (e.target === dlg) dlg.close(); });
+    dlg.addEventListener("close", () => { if (opener) opener.focus(); });
+  } else {
+    $$(".cred-open").forEach((btn) => btn.addEventListener("click", () => { location.href = btn.dataset.pdf; }));
   }
 
   /* ---------- contact form (Formspree) ---------- */

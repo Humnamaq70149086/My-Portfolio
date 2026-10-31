@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Humna Maqbool | AI, Security &amp; Web</title>
-  <meta name="description" content="Humna Maqbool, Information Engineering Technology student at the University of Lahore, building retrieval-grounded AI and working toward AI safety research.">
+  <meta name="description" content="Humna Maqbool, Information Engineering Technology student at the University of Lahore, building machine learning apps and working toward AI safety research.">
   <meta property="og:title" content="Humna Maqbool">
-  <meta property="og:description" content="Building AI that cites its sources. RAG, security and web projects from Lahore.">
+  <meta property="og:description" content="Machine learning, security and web projects from Lahore.">
   <meta property="og:image" content="humna.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,8 +41,8 @@
           <span class="line" data-split>Humna</span>
           <span class="line" data-split>Maqbool</span>
         </h1>
-        <p class="role">I build <span class="typed" id="typed">AI that cites its sources</span><span class="caret" aria-hidden="true"></span></p>
-        <p class="lede">Information Engineering Technology student at the University of Lahore. I work across retrieval-augmented AI, security and the web, and I'm heading toward AI safety research in Pakistan.</p>
+        <p class="role">I build <span class="typed" id="typed">ML models for health screening</span><span class="caret" aria-hidden="true"></span></p>
+        <p class="lede">Information Engineering Technology student at the University of Lahore. I work across machine learning, security and the web, and I'm heading toward AI safety research in Pakistan.</p>
         <div class="hero-actions">
           <a href="#work" class="btn btn-solid magnetic">See my work</a>
           <a href="HUMNARESUME.pdf" class="btn btn-line magnetic" download="Humna_Maqbool_Resume.pdf">Download resume</a>
@@ -56,7 +56,7 @@
         </div>
         <svg class="orbit" viewBox="0 0 200 200" aria-hidden="true">
           <defs><path id="circlePath" d="M100,100 m-90,0 a90,90 0 1,1 180,0 a90,90 0 1,1 -180,0"/></defs>
-          <text><textPath href="#circlePath">AI safety ✦ retrieval ✦ security ✦ web ✦ Lahore ✦ </textPath></text>
+          <text><textPath href="#circlePath">AI safety ✦ machine learning ✦ security ✦ web ✦ Lahore ✦ </textPath></text>
         </svg>
         <div class="cutout" id="cutout">
           <picture>
@@ -74,26 +74,26 @@
       </figure>
     </section>
 
-    <!-- GROUNDING DEMO -->
+    <!-- PREDICTION DEMO -->
     <section class="demo-band" aria-labelledby="demoTitle">
       <div class="wrap demo-layout">
         <div class="demo-copy">
-          <h2 id="demoTitle">Answers should come with receipts.</h2>
-          <p>In The Legal Desk, a language model is only allowed to answer from documents it actually retrieved. If it reaches for a case that isn't in the corpus, the citation gets caught and removed.</p>
-          <p class="small">Illustrative trace of the retrieval step. File names are examples.</p>
+          <h2 id="demoTitle">From a form to a risk score.</h2>
+          <p>In MediPredictAI, the details someone enters in the Flutter app go to a Flask REST API. An XGBoost model scores them and the result comes straight back to the screen.</p>
+          <p class="small">Illustrative trace. Values are examples, and the app is a screening aid, not a diagnosis.</p>
         </div>
-        <div class="terminal" id="terminal" role="img" aria-label="Animated example: a legal question is matched to documents with BM25, an invented case citation is flagged and removed, and the answer is drafted from two retrieved sources.">
-          <div class="term-bar"><i></i><i></i><i></i><span>legal-desk / rag-trace</span></div>
+        <div class="terminal" id="terminal" role="img" aria-label="Animated example: patient details are sent to a prediction API, an XGBoost model weighs the main factors, and an elevated risk score is returned to the app.">
+          <div class="term-bar"><i></i><i></i><i></i><span>medipredictai / api-trace</span></div>
           <div class="term-body">
-            <p class="t-line t-q"><span class="pr">query</span> <span id="tQuery"></span></p>
-            <p class="t-line t-step" data-step="1"><span class="pr">bm25</span> ranking 1,240 passages</p>
+            <p class="t-line t-q"><span class="pr">POST</span> <span id="tQuery"></span></p>
+            <p class="t-line t-step" data-step="1"><span class="pr">model</span> xgboost_heart scoring input</p>
             <ul class="hits" data-step="2">
-              <li><span class="doc">tenancy_statute.pdf</span><span class="bar"><b style="--w:92%"></b></span><span class="score">12.4</span></li>
-              <li><span class="doc">high_court_judgment_014.pdf</span><span class="bar"><b style="--w:68%"></b></span><span class="score">9.1</span></li>
-              <li><span class="doc">notice_guidelines.pdf</span><span class="bar"><b style="--w:47%"></b></span><span class="score">6.7</span></li>
+              <li><span class="doc">chest pain type</span><span class="bar"><b style="--w:88%"></b></span><span class="score">0.31</span></li>
+              <li><span class="doc">max heart rate</span><span class="bar"><b style="--w:61%"></b></span><span class="score">0.21</span></li>
+              <li><span class="doc">cholesterol</span><span class="bar"><b style="--w:39%"></b></span><span class="score">0.14</span></li>
             </ul>
-            <p class="t-line t-flag" data-step="3"><span class="pr warn">check</span> <s>"Khan v. Raza (2017)"</s> not in corpus, removed</p>
-            <p class="t-line t-ok" data-step="4"><span class="pr ok">answer</span> drafted from sources [1] [2] ✓</p>
+            <p class="t-line t-flag" data-step="3"><span class="pr warn">note</span> screening aid only, not a diagnosis</p>
+            <p class="t-line t-ok" data-step="4"><span class="pr ok">result</span> risk elevated (0.72), sent to app ✓</p>
           </div>
         </div>
       </div>
@@ -103,30 +103,10 @@
     <section id="work" class="section wrap">
       <div class="section-head reveal">
         <h2>Selected work</h2>
-        <p>From a final-year legal AI app to a Kubernetes pipeline.</p>
+        <p>From a health-screening app to a Kubernetes pipeline.</p>
       </div>
 
       <article class="feature reveal tilt">
-        <div class="feature-text">
-          <p class="kicker">Final-year project, team of students, 2026–27</p>
-          <h3>The Legal Desk</h3>
-          <p>An app that helps people in Pakistan hire verified lawyers without getting scammed, with an AI assistant that answers legal questions. I built the retrieval-augmented generation layer: an in-app BM25 search over legal documents feeding Google Gemini, so answers rest on real sources instead of invented cases.</p>
-          <ul class="facts">
-            <li>Visited the High Court to collect real legal documents for the corpus</li>
-            <li>Tested the pipeline against real and deliberately fake documents</li>
-            <li>Supervised by Dr. Syed M. Hamedoon</li>
-          </ul>
-          <p class="stack"><span>Flutter</span><span>Firebase Auth</span><span>Firebase AI Logic</span><span>Gemini</span><span>BM25 RAG</span></p>
-        </div>
-        <div class="feature-visual" aria-hidden="true">
-          <div class="doc-stack">
-            <div class="sheet s3"></div><div class="sheet s2"></div>
-            <div class="sheet s1"><b></b><b></b><b class="hl"></b><b></b><b class="short"></b></div>
-          </div>
-        </div>
-      </article>
-
-      <article class="feature feature-alt reveal tilt">
         <div class="feature-text">
           <p class="kicker">University project, 2026</p>
           <h3>MediPredictAI</h3>
@@ -183,7 +163,7 @@
       <div class="about-copy reveal">
         <h2>About me</h2>
         <p>I'm in the final year of BS Information Engineering Technology at the University of Lahore, graduating in May 2027. I like problems where software has to be trustworthy: systems that can't be broken into easily, and AI that doesn't make things up.</p>
-        <p>That's what pulled me toward AI safety. Building RAG for The Legal Desk showed me how confidently a model can invent a court case, and how much careful retrieval and testing it takes to stop that. I want to keep working on hallucination, evaluation and AI governance, and help grow that research in Pakistan.</p>
+        <p>That's what pulled me toward AI safety. Building prediction models and studying AI cybersecurity and governance showed me how much careful testing it takes before a model's output can be trusted. I want to work on hallucination, evaluation and AI governance, and help grow that research in Pakistan.</p>
       </div>
       <dl class="about-facts reveal">
         <div><dt>Degree</dt><dd>BS Information Engineering Technology</dd></div>
@@ -203,12 +183,12 @@
       </div>
       <div class="marquee" aria-hidden="true">
         <div class="marquee-track">
-          <span>Python</span><span>Flutter</span><span>Firebase</span><span>Gemini</span><span>XGBoost</span><span>TensorFlow</span><span>Docker</span><span>Kubernetes</span><span>Kali Linux</span><span>Metasploit</span><span>React</span><span>Figma</span>
-          <span>Python</span><span>Flutter</span><span>Firebase</span><span>Gemini</span><span>XGBoost</span><span>TensorFlow</span><span>Docker</span><span>Kubernetes</span><span>Kali Linux</span><span>Metasploit</span><span>React</span><span>Figma</span>
+          <span>Python</span><span>Flutter</span><span>Firebase</span><span>scikit-learn</span><span>XGBoost</span><span>TensorFlow</span><span>Docker</span><span>Kubernetes</span><span>Kali Linux</span><span>Metasploit</span><span>React</span><span>Figma</span>
+          <span>Python</span><span>Flutter</span><span>Firebase</span><span>scikit-learn</span><span>XGBoost</span><span>TensorFlow</span><span>Docker</span><span>Kubernetes</span><span>Kali Linux</span><span>Metasploit</span><span>React</span><span>Figma</span>
         </div>
       </div>
       <div class="wrap skill-rows">
-        <div class="skill-row reveal"><h3>AI &amp; data</h3><p>Python, scikit-learn, XGBoost, TensorFlow / Keras, RAG with BM25, Gemini via Firebase AI Logic, Flask REST APIs</p></div>
+        <div class="skill-row reveal"><h3>AI &amp; data</h3><p>Python, scikit-learn, XGBoost, TensorFlow / Keras, Flask REST APIs, model evaluation</p></div>
         <div class="skill-row reveal"><h3>Security</h3><p>Network security, firewall rules, Linux and Kali Linux, Metasploit, Hydra, Shodan, authentication and authorization</p></div>
         <div class="skill-row reveal"><h3>App &amp; web</h3><p>Flutter and Dart, HTML, CSS, JavaScript, React, responsive design</p></div>
         <div class="skill-row reveal"><h3>Cloud &amp; DevOps</h3><p>Docker, Kubernetes, Jenkins, SonarQube, AWS, Git and GitHub, CI/CD</p></div>
@@ -264,19 +244,28 @@
         <div class="cred-group reveal">
           <h3>Job simulations</h3>
           <ul class="cred-list">
-            <li class="cred"><span class="seal sim" aria-hidden="true"></span><div><p class="cred-title">GenAI for Proposal Generation</p><p class="cred-meta">EAB, via Forage</p></div><span class="year">2026</span></li>
-            <li class="cred"><span class="seal sim" aria-hidden="true"></span><div><p class="cred-title">Cybersecurity</p><p class="cred-meta">Mastercard, via Forage</p></div><span class="year">2026</span></li>
+            <li class="cred has-cert"><span class="seal sim" aria-hidden="true"></span><div><p class="cred-title">GenAI for Proposal Generation</p><p class="cred-meta">EAB, via Forage</p><p class="cred-tasks">Drafted a hypothesis proposal with generative AI, then refined it through continued discovery.</p><button type="button" class="cred-open" data-img="certificates/genai-proposal-generation.webp" data-pdf="certificates/genai-proposal-generation.pdf" data-title="GenAI for Proposal Generation Job Simulation">View certificate</button></div><span class="year">2026</span></li>
+            <li class="cred has-cert"><span class="seal sim" aria-hidden="true"></span><div><p class="cred-title">Cybersecurity</p><p class="cred-meta">Mastercard, via Forage</p><p class="cred-tasks">Designed a phishing email simulation and interpreted its results.</p><button type="button" class="cred-open" data-img="certificates/cybersecurity-mastercard.webp" data-pdf="certificates/cybersecurity-mastercard.pdf" data-title="Cybersecurity Job Simulation, Mastercard">View certificate</button></div><span class="year">2026</span></li>
           </ul>
           <p class="cred-note">Job simulations are short virtual work assignments set by the company, completed on Forage.</p>
         </div>
       </div>
     </section>
 
+    <dialog class="cert-dialog" id="certDialog" aria-labelledby="certTitle">
+      <div class="cert-dialog-head">
+        <h3 id="certTitle">Certificate</h3>
+        <button type="button" class="cert-close" id="certClose">Close</button>
+      </div>
+      <img id="certImg" src="" alt="" width="1600" height="1131">
+      <a id="certPdf" class="btn btn-line" href="#" target="_blank" rel="noopener">Open PDF</a>
+    </dialog>
+
     <!-- CONTACT -->
     <section id="contact" class="section wrap contact">
       <div class="contact-copy reveal">
         <h2>Let's talk</h2>
-        <p>I'm looking for research internships and fellowships in AI safety, and I'm happy to chat about RAG, security or a project you're building.</p>
+        <p>I'm looking for research internships and fellowships in AI safety, and I'm happy to chat about machine learning, security or a project you're building.</p>
         <ul class="links">
           <li><span>Email</span><a href="mailto:Humnamaq06@gmail.com">Humnamaq06@gmail.com</a></li>
           <li><span>LinkedIn</span><a href="https://www.linkedin.com/in/humna-maqbool21" target="_blank" rel="noopener">in/humna-maqbool21</a></li>
