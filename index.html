@@ -1,487 +1,304 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Humna Maqbool | IT Portfolio</title>
-
-    <link rel="stylesheet" href="style.css">
-
-    <!-- Google Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Humna Maqbool | AI, Security &amp; Web</title>
+  <meta name="description" content="Humna Maqbool, Information Engineering Technology student at the University of Lahore, building retrieval-grounded AI and working toward AI safety research.">
+  <meta property="og:title" content="Humna Maqbool">
+  <meta property="og:description" content="Building AI that cites its sources. RAG, security and web projects from Lahore.">
+  <meta property="og:image" content="humna.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+  <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
 
-    <!-- Navigation -->
-    <header>
-        <nav class="navbar">
-            <div class="logo">HM.</div>
+  <header class="site-header">
+    <nav class="nav wrap" aria-label="Main">
+      <a href="#home" class="logo" aria-label="Humna Maqbool, back to top">hm<span>.</span></a>
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navLinks">Menu</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#work">Work</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#credentials">Certificates</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li class="nav-indicator" aria-hidden="true"></li>
+      </ul>
+    </nav>
+  </header>
 
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#contact">Contact</a></li>
+  <main>
+    <!-- HERO -->
+    <section id="home" class="hero wrap">
+      <div class="hero-text">
+        <p class="hello">Hi, I'm</p>
+        <h1 class="name" aria-label="Humna Maqbool">
+          <span class="line" data-split>Humna</span>
+          <span class="line" data-split>Maqbool</span>
+        </h1>
+        <p class="role">I build <span class="typed" id="typed">AI that cites its sources</span><span class="caret" aria-hidden="true"></span></p>
+        <p class="lede">Information Engineering Technology student at the University of Lahore. I work across retrieval-augmented AI, security and the web, and I'm heading toward AI safety research in Pakistan.</p>
+        <div class="hero-actions">
+          <a href="#work" class="btn btn-solid magnetic">See my work</a>
+          <a href="HUMNARESUME.pdf" class="btn btn-line magnetic" download="Humna_Maqbool_Resume.pdf">Download resume</a>
+        </div>
+      </div>
+
+      <figure class="portrait" id="portrait">
+        <div class="backdrop" aria-hidden="true">
+          <span class="ring r1"></span><span class="ring r2"></span>
+          <span class="blob" id="blob"></span>
+        </div>
+        <svg class="orbit" viewBox="0 0 200 200" aria-hidden="true">
+          <defs><path id="circlePath" d="M100,100 m-90,0 a90,90 0 1,1 180,0 a90,90 0 1,1 -180,0"/></defs>
+          <text><textPath href="#circlePath">AI safety ✦ retrieval ✦ security ✦ web ✦ Lahore ✦ </textPath></text>
+        </svg>
+        <div class="cutout" id="cutout">
+          <picture>
+            <source srcset="humna.webp" type="image/webp">
+            <img src="humna.png" alt="Humna Maqbool smiling, wearing a leopard-print scarf with a red star clip" width="720" height="805">
+          </picture>
+        </div>
+        <svg class="stars" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+          <path class="star s-a" d="M0,-5 L1.5,-1.5 L5,0 L1.5,1.5 L0,5 L-1.5,1.5 L-5,0 L-1.5,-1.5Z" transform="translate(4 30)"/>
+          <path class="star s-b" d="M0,-5 L1.5,-1.5 L5,0 L1.5,1.5 L0,5 L-1.5,1.5 L-5,0 L-1.5,-1.5Z" transform="translate(95 16)"/>
+          <path class="star s-c" d="M0,-5 L1.5,-1.5 L5,0 L1.5,1.5 L0,5 L-1.5,1.5 L-5,0 L-1.5,-1.5Z" transform="translate(84 74)"/>
+          <path class="star s-d" d="M0,-5 L1.5,-1.5 L5,0 L1.5,1.5 L0,5 L-1.5,1.5 L-5,0 L-1.5,-1.5Z" transform="translate(6 62)"/>
+        </svg>
+        <figcaption class="status"><span class="dot"></span>Open to research internships</figcaption>
+      </figure>
+    </section>
+
+    <!-- GROUNDING DEMO -->
+    <section class="demo-band" aria-labelledby="demoTitle">
+      <div class="wrap demo-layout">
+        <div class="demo-copy">
+          <h2 id="demoTitle">Answers should come with receipts.</h2>
+          <p>In The Legal Desk, a language model is only allowed to answer from documents it actually retrieved. If it reaches for a case that isn't in the corpus, the citation gets caught and removed.</p>
+          <p class="small">Illustrative trace of the retrieval step. File names are examples.</p>
+        </div>
+        <div class="terminal" id="terminal" role="img" aria-label="Animated example: a legal question is matched to documents with BM25, an invented case citation is flagged and removed, and the answer is drafted from two retrieved sources.">
+          <div class="term-bar"><i></i><i></i><i></i><span>legal-desk / rag-trace</span></div>
+          <div class="term-body">
+            <p class="t-line t-q"><span class="pr">query</span> <span id="tQuery"></span></p>
+            <p class="t-line t-step" data-step="1"><span class="pr">bm25</span> ranking 1,240 passages</p>
+            <ul class="hits" data-step="2">
+              <li><span class="doc">tenancy_statute.pdf</span><span class="bar"><b style="--w:92%"></b></span><span class="score">12.4</span></li>
+              <li><span class="doc">high_court_judgment_014.pdf</span><span class="bar"><b style="--w:68%"></b></span><span class="score">9.1</span></li>
+              <li><span class="doc">notice_guidelines.pdf</span><span class="bar"><b style="--w:47%"></b></span><span class="score">6.7</span></li>
             </ul>
-
-            <button class="menu-btn" onclick="toggleMenu()">☰</button>
-        </nav>
-    </header>
-
-
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-
-        <div class="hero-text">
-            <p class="intro">Hello, I'm</p>
-
-            <h1>Humna Maqbool</h1>
-
-            <h2> An Information Engineering Technology Student</h2>
-
-            <p>
-                Passionate about Web Development, Cybersecurity,
-                AI/ML, and emerging technologies.
-            </p>
-
-            <div class="hero-buttons">
-
-    <a href="projects.html" class="btn primary-btn">
-        My Projects
-        <span>→</span>
-    </a>
-</div>
-
-     <a href="HUMNARESUME.pdf" class="btn secondary-btn" download>
-         Download Resume
-         </a>
-         </div>
-         </div> 
-         <div class="hero-image"> 
-            <img src="profile.jpeg" alt="Humna Maqbool"> 
+            <p class="t-line t-flag" data-step="3"><span class="pr warn">check</span> <s>"Khan v. Raza (2017)"</s> not in corpus, removed</p>
+            <p class="t-line t-ok" data-step="4"><span class="pr ok">answer</span> drafted from sources [1] [2] ✓</p>
+          </div>
         </div>
-
+      </div>
     </section>
 
+    <!-- WORK -->
+    <section id="work" class="section wrap">
+      <div class="section-head reveal">
+        <h2>Selected work</h2>
+        <p>From a final-year legal AI app to a Kubernetes pipeline.</p>
+      </div>
 
-    <!-- About Section -->
-    <section id="about" class="section">
-
-        <div class="section-title">
-            <p>Get To Know Me</p>
-            <h2>About Me</h2>
+      <article class="feature reveal tilt">
+        <div class="feature-text">
+          <p class="kicker">Final-year project, team of students, 2026–27</p>
+          <h3>The Legal Desk</h3>
+          <p>An app that helps people in Pakistan hire verified lawyers without getting scammed, with an AI assistant that answers legal questions. I built the retrieval-augmented generation layer: an in-app BM25 search over legal documents feeding Google Gemini, so answers rest on real sources instead of invented cases.</p>
+          <ul class="facts">
+            <li>Visited the High Court to collect real legal documents for the corpus</li>
+            <li>Tested the pipeline against real and deliberately fake documents</li>
+            <li>Supervised by Dr. Syed M. Hamedoon</li>
+          </ul>
+          <p class="stack"><span>Flutter</span><span>Firebase Auth</span><span>Firebase AI Logic</span><span>Gemini</span><span>BM25 RAG</span></p>
         </div>
-        <div class="about-content">
-
-            <div class="about-image">
-                <img src="profile.jpeg " alt="Humna Maqbool">
-            </div>
- 
-            <div class="about-text">
-
-                <h3>Information Engineering Technology Student</h3>
-
-                <p>
-                    I am an Information Engineering Technology student at
-                    the University of Lahore with a strong interest in
-                    Web Development, Cybersecurity, AI/ML, and technology.
-                </p>
-
-                <p>
-                    I enjoy developing responsive websites, exploring
-                    security concepts, and working on practical technology
-                    projects that allow me to apply my technical knowledge.
-                </p>
-
-                <div class="about-info">
-                    <div>
-                        <strong>Degree</strong>
-                        <span>BS Information Engineering Technology</span>
-                    </div>
-
-                    <div>
-                        <strong>University</strong>
-                        <span>University of Lahore</span>
-                    </div>
-
-                    <div>
-                        <strong>GPA</strong>
-                        <span>3.58 / 4.0</span>
-                    </div>
-                </div>
-
-            </div>
-
+        <div class="feature-visual" aria-hidden="true">
+          <div class="doc-stack">
+            <div class="sheet s3"></div><div class="sheet s2"></div>
+            <div class="sheet s1"><b></b><b></b><b class="hl"></b><b></b><b class="short"></b></div>
+          </div>
         </div>
+      </article>
 
-    </section>
-    <!-- Skills Section -->
-    <section id="skills" class="section skills-section">
-
-        <div class="section-title">
-            <p>What I Work With</p>
-            <h2>Technical Skills</h2>
+      <article class="feature feature-alt reveal tilt">
+        <div class="feature-text">
+          <p class="kicker">University project, 2026</p>
+          <h3>MediPredictAI</h3>
+          <p>A multi-disease screening app with three models behind one REST API: XGBoost classifiers for heart disease and diabetes risk, and a TensorFlow image model for skin conditions trained on DermaMNIST. The Flutter front end runs on phones and desktop from one codebase.</p>
+          <p class="stack"><span>Python</span><span>Flask</span><span>XGBoost</span><span>TensorFlow / Keras</span><span>Flutter</span></p>
         </div>
-
-        <div class="skills-container">
-
-            <div class="skill-card">
-                <h3>Development</h3>
-                <p>HTML</p>
-                <p>CSS</p>
-                <p>JavaScript</p>
-                <p>React</p>
-                <p>Flutter</p>
-                <p>Dart</p>
-            </div>
-
-            <div class="skill-card">
-                <h3>Programming</h3>
-                <p>Python</p>
-                <p>JavaScript</p>
-                <p>Bash Scripting</p>
-            </div>
-
-            <div class="skill-card">
-                <h3>Cybersecurity</h3>
-                <p>Network Security</p>
-                <p>Linux</p>
-                <p>Kali Linux</p>
-                <p>Authentication & Authorization</p>
-                <p>Shodan</p>
-            </div>
-
-            <div class="skill-card">
-                <h3>Cloud & DevOps</h3>
-                <p>Firebase</p>
-                <p>AWS Basics</p>
-                <p>Docker</p>
-                <p>Git & GitHub</p>
-                <p>CI/CD</p>
-            </div>
-
-            <div class="skill-card">
-                <h3>Database</h3>
-                <p>SQL</p>
-                <p>Firestore</p>
-            </div>
-
-            <div class="skill-card">
-                <h3>Design & Tools</h3>
-                <p>Figma</p>
-                <p>Canva</p>
-                <p>VS Code</p>
-                <p>MS Office</p>
-            </div>
-
+        <div class="feature-visual" aria-hidden="true">
+          <div class="pulse">
+            <svg viewBox="0 0 300 80"><path d="M0 40 H90 L105 18 L122 64 L138 8 L152 52 L162 40 H300"/></svg>
+          </div>
         </div>
+      </article>
 
+      <div class="grid">
+        <article class="card reveal tilt">
+          <p class="tag">DevOps</p>
+          <h3>CI/CD pipeline</h3>
+          <p>Automated build and deploy: SonarQube code analysis, Docker images, Kubernetes deployment on AWS, orchestrated with Jenkins.</p>
+          <p class="stack"><span>Jenkins</span><span>SonarQube</span><span>Docker</span><span>Kubernetes</span><span>AWS</span></p>
+          <a class="card-link" href="https://humnamaq70149086.github.io/Jenkins-Docker-SonarQube/">Open project</a>
+        </article>
+        <article class="card reveal tilt">
+          <p class="tag">Machine learning</p>
+          <h3>Diabetes prediction</h3>
+          <p>A Random Forest model with full preprocessing, training and evaluation, later rebuilt with XGBoost inside MediPredictAI.</p>
+          <p class="stack"><span>Python</span><span>scikit-learn</span><span>Random Forest</span></p>
+          <a class="card-link" href="https://humnamaq70149086.github.io/Diabetes-Prediction-System/">Open project</a>
+        </article>
+        <article class="card reveal tilt">
+          <p class="tag">Web</p>
+          <h3>The Aesthetic Arc</h3>
+          <p>A responsive interior design studio site with interactive galleries and layered visuals.</p>
+          <p class="stack"><span>HTML</span><span>CSS</span><span>JavaScript</span></p>
+          <a class="card-link" href="https://humnamaq70149086.github.io/aesthetic-arc-website/">Open project</a>
+        </article>
+        <article class="card reveal tilt">
+          <p class="tag">Web</p>
+          <h3>Nail salon &amp; spa site</h3>
+          <p>Built from my own Figma design: custom layout, palette and components, responsive from phone to desktop.</p>
+          <p class="stack"><span>Figma</span><span>HTML</span><span>CSS</span></p>
+          <a class="card-link" href="https://humnamaq70149086.github.io/Nail-Salon-And-Spa/">Open project</a>
+        </article>
+        <article class="card reveal tilt">
+          <p class="tag">Hardware</p>
+          <h3>Remote-control car</h3>
+          <p>An Arduino car wiring sensors and actuators together for movement and control.</p>
+          <p class="stack"><span>Arduino</span><span>Sensors</span><span>Actuators</span></p>
+        </article>
+      </div>
     </section>
 
-
-    <!-- Projects Section -->
-    <section id="projects" class="section">
-
-        <div class="section-title">
-            <p>My Recent Work</p>
-            <h2>Projects</h2>
-        </div>
-
-        <div class="projects-container">
-
-            <!-- Project 1 -->
-            <div class="project-card">
-
-                <div class="project-image">
-                    <span>WEB</span>
-                </div>
-
-                <div class="project-content">
-
-                    <h3>Nail Salon & Spa Portfolio Website</h3>
-
-                    <p class="tech">
-                        HTML · CSS · Figma · UI/UX
-                    </p>
-
-                    <p>
-                        Developed a responsive portfolio website based
-                        on a Figma design with customized layouts,
-                        colors, and user interface elements.
-                    </p>
-
-                    <a href="#" class="project-btn">View Project →</a>
-
-                </div>
-
-            </div>
-
-
-            <!-- Project 2 -->
-            <div class="project-card">
-
-                <div class="project-image">
-                    <span>WEB</span>
-                </div>
-
-                <div class="project-content">
-
-                    <h3>The Aesthetic Arc</h3>
-
-                    <p class="tech">
-                        HTML · CSS · JavaScript
-                    </p>
-
-                    <p>
-                        Designed and developed a modern, responsive
-                        interior design website with interactive
-                        and visually engaging web elements.
-                    </p>
-
-                    <a href="https://humnamaq70149086.github.io/aesthetic-arc-website/" class="project-btn">View Project →</a>
-
-                </div>
-
-            </div>
-
-
-            <!-- Project 3 -->
-            <div class="project-card">
-
-                <div class="project-image">
-                    <span>AI / ML</span>
-                </div>
-
-                <div class="project-content">
-
-                    <h3>Diabetes Prediction Using Machine Learning</h3>
-
-                    <p class="tech">
-                        Python · Random Forest
-                    </p>
-
-                    <p>
-                        Developed a machine learning model for diabetes
-                        prediction using data preprocessing, model
-                        training, and evaluation.
-                    </p>
-
-                    <a href="#" class="project-btn">View Project →</a>
-
-                </div>
-
-            </div>
-
-
-            <!-- Project 4 -->
-            <div class="project-card">
-
-                <div class="project-image">
-                    <span>DEVOPS</span>
-                </div>
-
-                <div class="project-content">
-
-                    <h3>Docker CI/CD Pipeline</h3>
-
-                    <p class="tech">
-                        Jenkins · SonarQube · Docker · Kubernetes · AWS
-                    </p>
-
-                    <p>
-                        Built an automated CI/CD pipeline integrating
-                        code analysis, containerization, Kubernetes,
-                        and cloud deployment.
-                    </p>
-
-                    <a href="#" class="project-btn">View Project →</a>
-
-                </div>
-
-            </div>
-
-
-            <!-- Project 5 -->
-            <div class="project-card">
-
-                <div class="project-image">
-                    <span>HARDWARE</span>
-                </div>
-
-                <div class="project-content">
-
-                    <h3>Remote Control Car</h3>
-
-                    <p class="tech">
-                        Arduino · Sensors · Actuators
-                    </p>
-
-                    <p>
-                        Developed an Arduino-based remote-control car
-                        by integrating sensors and actuators for
-                        movement and hardware control.
-                    </p>
-
-                    <a href="#" class="project-btn">View Project →</a>
-
-                </div>
-
-            </div>
-
-        </div>
-
+    <!-- ABOUT -->
+    <section id="about" class="section wrap about">
+      <div class="about-copy reveal">
+        <h2>About me</h2>
+        <p>I'm in the final year of BS Information Engineering Technology at the University of Lahore, graduating in May 2027. I like problems where software has to be trustworthy: systems that can't be broken into easily, and AI that doesn't make things up.</p>
+        <p>That's what pulled me toward AI safety. Building RAG for The Legal Desk showed me how confidently a model can invent a court case, and how much careful retrieval and testing it takes to stop that. I want to keep working on hallucination, evaluation and AI governance, and help grow that research in Pakistan.</p>
+      </div>
+      <dl class="about-facts reveal">
+        <div><dt>Degree</dt><dd>BS Information Engineering Technology</dd></div>
+        <div><dt>University</dt><dd>University of Lahore, 2023 to 2027</dd></div>
+        <div><dt>CGPA</dt><dd class="num"><span data-count="3.58">3.58</span> / 4.00</dd></div>
+        <div><dt>Research interests</dt><dd>AI safety, hallucination reduction, AI governance</dd></div>
+      </dl>
     </section>
 
-
-    <!-- Experience Section -->
-    <section id="experience" class="section experience-section">
-
-        <div class="section-title">
-            <p>My Background</p>
-            <h2>Experience & Education</h2>
+    <!-- SKILLS -->
+    <section id="skills" class="section skills">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <h2>What I work with</h2>
+          <p>Grouped by where I use it most.</p>
         </div>
-
-        <div class="timeline">
-
-            <div class="timeline-item">
-
-                <div class="timeline-dot"></div>
-
-                <div class="timeline-content">
-
-                    <span>2026</span>
-
-                    <h3>ISPR Internship</h3>
-
-                    <p>
-                        Internship experience involving professional
-                        exposure and practical learning in a
-                        technology-focused environment.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <div class="timeline-item">
-
-                <div class="timeline-dot"></div>
-
-                <div class="timeline-content">
-
-                    <span>2023 – Present</span>
-
-                    <h3>BS Information Engineering Technology</h3>
-
-                    <h4>University of Lahore</h4>
-
-                    <p>
-                        Studying software development, artificial
-                        intelligence, cybersecurity, databases,
-                        cloud computing, and related technologies.
-                    </p>
-
-                </div>
-
-            </div>
-
+      </div>
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee-track">
+          <span>Python</span><span>Flutter</span><span>Firebase</span><span>Gemini</span><span>XGBoost</span><span>TensorFlow</span><span>Docker</span><span>Kubernetes</span><span>Kali Linux</span><span>Metasploit</span><span>React</span><span>Figma</span>
+          <span>Python</span><span>Flutter</span><span>Firebase</span><span>Gemini</span><span>XGBoost</span><span>TensorFlow</span><span>Docker</span><span>Kubernetes</span><span>Kali Linux</span><span>Metasploit</span><span>React</span><span>Figma</span>
         </div>
-
+      </div>
+      <div class="wrap skill-rows">
+        <div class="skill-row reveal"><h3>AI &amp; data</h3><p>Python, scikit-learn, XGBoost, TensorFlow / Keras, RAG with BM25, Gemini via Firebase AI Logic, Flask REST APIs</p></div>
+        <div class="skill-row reveal"><h3>Security</h3><p>Network security, firewall rules, Linux and Kali Linux, Metasploit, Hydra, Shodan, authentication and authorization</p></div>
+        <div class="skill-row reveal"><h3>App &amp; web</h3><p>Flutter and Dart, HTML, CSS, JavaScript, React, responsive design</p></div>
+        <div class="skill-row reveal"><h3>Cloud &amp; DevOps</h3><p>Docker, Kubernetes, Jenkins, SonarQube, AWS, Git and GitHub, CI/CD</p></div>
+        <div class="skill-row reveal"><h3>Data stores</h3><p>MySQL, SQL, Firebase and Firestore</p></div>
+        <div class="skill-row reveal"><h3>Design</h3><p>Figma, Canva</p></div>
+      </div>
     </section>
 
-    <!-- CONTACT SECTION -->
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section wrap">
+      <div class="section-head reveal">
+        <h2>Experience</h2>
+        <p>Most recent first.</p>
+      </div>
+      <ol class="timeline" id="timeline">
+        <li class="reveal">
+          <p class="when">Now</p>
+          <h3>IT &amp; Digital Transformation Intern</h3>
+          <p class="where">Community Task Foundation Home (CTF), NGO</p>
+          <p>I look after the foundation's website and support students with learning and personal growth.</p>
+        </li>
+        <li class="reveal">
+          <p class="when">2026</p>
+          <h3>Intern, AI and cybersecurity</h3>
+          <p class="where">ISPR</p>
+          <p>Supported research and technical analysis on AI and cybersecurity projects, including how AI applies to information analysis and security, and threat-awareness work.</p>
+        </li>
+        <li class="reveal">
+          <p class="when">2023 – 2027</p>
+          <h3>BS Information Engineering Technology</h3>
+          <p class="where">University of Lahore</p>
+          <p>Software development, artificial intelligence, cybersecurity, databases and cloud computing. CGPA 3.58.</p>
+        </li>
+      </ol>
+    </section>
 
-<section id="contact" class="contact">
-
-    <div class="section-title">
-        <p>GET IN TOUCH</p>
-        <h2>Contact Me</h2>
-        <p>
-            Have a question or want to work together?
-            Send me a message.
-        </p>
-    </div>
-
-    <form id="contactForm" class="contact-form">
-
-        <div class="form-group">
-            <label for="name">Name</label>
-
-            <input
-                type="text"
-                id="name"
-                name="name"
-                placeholder="Your Name"
-                required
-            >
+    <!-- CERTIFICATES -->
+    <section id="credentials" class="section wrap">
+      <div class="section-head reveal">
+        <h2>Certificates</h2>
+        <p>Courses and job simulations, newest first.</p>
+      </div>
+      <div class="cred-cols">
+        <div class="cred-group reveal">
+          <h3>Certifications</h3>
+          <ul class="cred-list">
+            <li class="cred"><span class="seal" aria-hidden="true"></span><div><p class="cred-title">AI Cybersecurity and Governance</p><p class="cred-meta">Columbia University</p></div><span class="year">2026</span></li>
+            <li class="cred"><span class="seal" aria-hidden="true"></span><div><p class="cred-title">Artificial Intelligence</p><p class="cred-meta">Hunarmand Punjab</p></div><span class="year">2026</span></li>
+            <li class="cred"><span class="seal" aria-hidden="true"></span><div><p class="cred-title">Foundations of Cybersecurity</p><p class="cred-meta">Google, via Coursera</p></div><span class="year">2025</span></li>
+            <li class="cred"><span class="seal" aria-hidden="true"></span><div><p class="cred-title">Advanced Graphic Designing</p><p class="cred-meta">Enablers</p></div><span class="year">2025</span></li>
+          </ul>
         </div>
-
-        <div class="form-group">
-            <label for="email">Email</label>
-
-            <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="Your Email"
-                required
-            >
+        <div class="cred-group reveal">
+          <h3>Job simulations</h3>
+          <ul class="cred-list">
+            <li class="cred"><span class="seal sim" aria-hidden="true"></span><div><p class="cred-title">GenAI for Proposal Generation</p><p class="cred-meta">EAB, via Forage</p></div><span class="year">2026</span></li>
+            <li class="cred"><span class="seal sim" aria-hidden="true"></span><div><p class="cred-title">Cybersecurity</p><p class="cred-meta">Mastercard, via Forage</p></div><span class="year">2026</span></li>
+          </ul>
+          <p class="cred-note">Job simulations are short virtual work assignments set by the company, completed on Forage.</p>
         </div>
+      </div>
+    </section>
 
-        <div class="form-group">
-            <label for="subject">Subject</label>
+    <!-- CONTACT -->
+    <section id="contact" class="section wrap contact">
+      <div class="contact-copy reveal">
+        <h2>Let's talk</h2>
+        <p>I'm looking for research internships and fellowships in AI safety, and I'm happy to chat about RAG, security or a project you're building.</p>
+        <ul class="links">
+          <li><span>Email</span><a href="mailto:Humnamaq06@gmail.com">Humnamaq06@gmail.com</a></li>
+          <li><span>LinkedIn</span><a href="https://www.linkedin.com/in/humna-maqbool21" target="_blank" rel="noopener">in/humna-maqbool21</a></li>
+          <li><span>GitHub</span><a href="https://github.com/humnamaq70149086" target="_blank" rel="noopener">humnamaq70149086</a></li>
+        </ul>
+      </div>
+      <form id="contactForm" class="contact-form reveal" novalidate>
+        <div class="field"><label for="name">Name</label><input id="name" name="name" type="text" autocomplete="name" required></div>
+        <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+        <div class="field"><label for="subject">Subject</label><input id="subject" name="subject" type="text" required></div>
+        <div class="field"><label for="message">Message</label><textarea id="message" name="message" rows="5" required></textarea></div>
+        <button type="submit" class="btn btn-solid" id="submitBtn">Send message</button>
+        <p id="formStatus" role="status"></p>
+      </form>
+    </section>
+  </main>
 
-            <input
-                type="text"
-                id="subject"
-                name="subject"
-                placeholder="Subject"
-                required
-            >
-        </div>
+  <footer class="wrap footer">
+    <p>© 2026 Humna Maqbool, Lahore</p>
+    <a href="#home">Back to top</a>
+  </footer>
 
-        <div class="form-group">
-            <label for="message">Message</label>
-
-            <textarea
-                id="message"
-                name="message"
-                rows="6"
-                placeholder="Write your message..."
-                required
-            ></textarea>
-        </div>
-
-        <button
-            type="submit"
-            class="contact-btn"
-            id="submitBtn"
-        >
-            Send Message →
-        </button>
-        <!-- Success/Error Message -->
-        <p id="formStatus"></p>
-
-    </form>
-
-</section>
-    <!-- Footer -->
-    <footer>
-
-        <p>
-            © 2026 Humna Maqbool. All Rights Reserved.
-        </p>
-
-    </footer>
-    <script src="script.js"></script>
-
+  <script src="script.js"></script>
 </body>
 </html>
